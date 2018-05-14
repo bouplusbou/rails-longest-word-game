@@ -1,0 +1,20 @@
+<h1>Result</h1>
+<% if @result == "valid" %>
+  <p><strong>Congratulations</strong> <%= "#{@attempt.upcase}" %> is a valid English word! </p>
+  <% elsif @result == "grid" %>
+  <p>Sorry but <%= "#{@attempt.upcase}" %> can't be built out of <%= "#{@grid.join}" %></p>
+  <% else %>
+  <p>Sorry but <strong><%= "#{@attempt.upcase}" %></strong> does not seem to be a valid English word...</p>
+<% end %>
+<p> <%= link_to "Play again", new_path %> </p>
+
+
+<!--     @result = "congratulations #{attempt.upcase} is a valid English word!"
+    # { message: "Well done !", score: ((attempt.length / time) * 1000).round(0), time: time }
+  else
+    @result = "Sorry but #{attempt} can't be built out of #{grid}"
+    # { message: "This word is not in the grid", score: 0, time: time }
+  end
+else
+  @result = "Sorry but #{attempt} does not seem to be a valid English word..."
+  # { message: "Sorry, this is not an english word", -->
